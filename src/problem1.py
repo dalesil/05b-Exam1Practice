@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Lucas D'Alesio.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -106,7 +106,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # -------------------------------------------------------------------------
@@ -135,6 +135,20 @@ def run_test_problem1a():
     print_expected_result_of_test([30, 100], expected, test_results,
                                   format_string)
     actual = problem1a(30, 100)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 3:
+    expected = 1.135  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([3, 5], expected, test_results,
+                                  format_string)
+    actual = problem1a(1, -2)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 4:
+    expected = -1.601  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([3, 5], expected, test_results,
+                                  format_string)
+    actual = problem1a(3, 5)
     print_actual_result_of_test(expected, actual, test_results, precision=3)
 
     print_summary_of_test_results(test_results)
@@ -176,6 +190,9 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
+    count = 0
+    for k in range(m, n):
+        count = count + 1
 
 
 def run_test_problem1b():
