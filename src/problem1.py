@@ -28,7 +28,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import testing_helper
 import time
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -139,7 +139,7 @@ def run_test_problem1a():
 
     # Test 3:
     expected = 1.135  # This is APPROXIMATELY the correct answer.
-    print_expected_result_of_test([3, 5], expected, test_results,
+    print_expected_result_of_test([1, -2], expected, test_results,
                                   format_string)
     actual = problem1a(1, -2)
     print_actual_result_of_test(expected, actual, test_results, precision=3)
@@ -182,7 +182,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -191,8 +191,9 @@ def problem1a(m, n):
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
     count = 0
-    for k in range(m, n):
-        count = count + 1
+    for k in range((n**2)+1 - m**2):
+        count = count + math.sin((m ** 2)+k)
+    return count
 
 
 def run_test_problem1b():
